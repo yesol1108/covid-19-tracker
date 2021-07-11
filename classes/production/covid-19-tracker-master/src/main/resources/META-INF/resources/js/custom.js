@@ -369,3 +369,4 @@ function boundingBox() {
         .reshape([1 , 784]);
     return tensor.div(255.0);
   }
+  }
