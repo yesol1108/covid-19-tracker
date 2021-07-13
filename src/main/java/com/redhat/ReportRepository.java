@@ -84,7 +84,7 @@ public class ReportRepository implements PanacheMongoRepository<DailyReport> {
 	
 	
 	public List<String> getCountryList(){
-		List<DailyReport> reports = list("lastUpdate","2020-05-12");
+		List<DailyReport> reports = list("lastUpdate","2021-07-01");
 		List<String> countryList = new ArrayList<String>();
 		for(DailyReport report : reports) {
 			countryList.add(report.country);
@@ -94,7 +94,7 @@ public class ReportRepository implements PanacheMongoRepository<DailyReport> {
 	}
 	
 	public List<String> getStatesList(){
-		List<DailyReport> reports = list("{'lastUpdate':'2020-05-12','country':'us'}");
+		List<DailyReport> reports = list("{'lastUpdate':'2021-07-01','country':'us'}");
 		List<String> stateList = new ArrayList<String>();
 		for(DailyReport report : reports) {
 			stateList.add(report.provinceState);
@@ -104,7 +104,7 @@ public class ReportRepository implements PanacheMongoRepository<DailyReport> {
 	}
 	
 	public List<String> getCountyList(String state){
-		List<DailyReport> reports = list("{'lastUpdate':'2020-05-12','country':'us', 'provinceState':?1}", state);
+		List<DailyReport> reports = list("{'lastUpdate':'2021-07-01','country':'us', 'provinceState':?1}", state);
 		List<String> countyList = new ArrayList<String>();
 		for(DailyReport report : reports) {
 			countyList.add(report.admin2);
